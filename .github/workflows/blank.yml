@@ -36,7 +36,7 @@ jobs:
       - name: Run bot
         run: |
           printenv
-          python main.py
+          python bot.py
         env:
           TELEGRAM_TOKEN: ${{ secrets.API_KEY }}
           TELEGRAM_CHAT_ID: 443587718
