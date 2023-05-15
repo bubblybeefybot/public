@@ -40,3 +40,5 @@ jobs:
         env:
           TELEGRAM_TOKEN: ${{ secrets.API_KEY }}
           TELEGRAM_CHAT_ID: 443587718
+          WETRACK_USER: ${{ secrets.WETRACK_USER }}
+          WETRACK_AUTH_TOKEN: ${{ secrets.WETRACK_AUTH_TOKEN }}
