@@ -13,9 +13,10 @@ bot = telebot.TeleBot(api_key)
 def test_request():
     headers = {
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer {}'.format(auth_token)
     }
     response = requests.get('https://wetrack.advantest.com/rest/api/2/search?jql=assignee%20%3D%20currentUser()%20AND%20resolution%20%3D%20Unresolved%20order%20by%20updated%20DESC',
-                            headers=headers, auth=(user, auth_token))   
+                            headers=headers)
     response_dict = response.json()
     message = ""
     for issue in response_dict['issues']:
