@@ -5,7 +5,6 @@ import requests
 
 api_key = os.environ['TELEGRAM_TOKEN']
 chat_id = os.environ['TELEGRAM_CHAT_ID']
-user = os.environ['WETRACK_USER']
 auth_token = os.environ['WETRACK_AUTH_TOKEN']
 bot = telebot.TeleBot(api_key)
 
@@ -18,7 +17,7 @@ def test_request():
     response = requests.get('https://wetrack.advantest.com/rest/api/2/search?jql=assignee%20%3D%20currentUser()%20AND%20resolution%20%3D%20Unresolved%20order%20by%20updated%20DESC',
                             headers=headers)
     response_dict = response.json()
-    message = ""
+    message = "*****Your Open Issues*****\n\n"
     for issue in response_dict['issues']:
         issue_key = issue['key']
         summary = issue['fields']['summary']
